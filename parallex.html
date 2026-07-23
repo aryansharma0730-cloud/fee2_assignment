@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Parallax sections */
+        .parallax {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .parallax-1 {
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80");
+        }
+
+        .parallax-2 {
+            min-height: 400px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80");
+        }
+
+        .parallax-3 {
+            min-height: 400px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80");
+        }
+
+        .parallax-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .parallax-content p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .parallax-content h2 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Normal content sections */
+        .section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #222;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* Cards */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Colored section */
+        .section-dark {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section-dark h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .section-dark p {
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: #1a1a2e;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #eee;
+        }
+
+        /* Mobile fix - fixed attachment can be buggy on mobile */
+        @media (max-width: 768px) {
+            .parallax {
+                background-attachment: scroll;
+            }
+
+            .parallax-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .parallax-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Parallax Hero -->
+    <section class="parallax parallax-1">
+        <div class="parallax-content">
+            <h1>Parallax Scrolling</h1>
+            <p>A simple and beautiful parallax effect made using only HTML and CSS</p>
+            <a href="#about" class="btn">Explore More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2>What is Parallax?</h2>
+        <p>
+            Parallax scrolling is a web design technique where background images move
+            slower than foreground content, creating a sense of depth and immersion
+            as you scroll down the page.
+        </p>
+        <p>
+            This page uses <b>background-attachment: fixed</b> in CSS to achieve
+            the parallax effect without any JavaScript.
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <h3>HTML</h3>
+                <p>Structured content with semantic sections for a clean layout.</p>
+            </div>
+            <div class="card">
+                <h3>CSS</h3>
+                <p>Fixed background images create the smooth parallax scrolling effect.</p>
+            </div>
+            <div class="card">
+                <h3>No JavaScript</h3>
+                <p>The entire effect is achieved using only HTML and CSS styling.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section 2 -->
+    <section class="parallax parallax-2">
+        <div class="parallax-content">
+            <h2>Scroll Down to See the Effect</h2>
+            <p>The background stays fixed while the content moves over it</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <h2>Features</h2>
+        <p>This parallax page includes multiple scroll sections, card layouts, and a responsive design.</p>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Responsive</h3>
+                <p>Works on desktop and mobile devices with adjusted styles.</p>
+            </div>
+            <div class="card">
+                <h3>Clean Design</h3>
+                <p>Simple, modern layout that is easy to read and present.</p>
+            </div>
+            <div class="card">
+                <h3>Easy to Edit</h3>
+                <p>Just change the background images and text to customize it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section 3 -->
+    <section class="parallax parallax-3">
+        <div class="parallax-content">
+            <h2>Beautiful Backgrounds</h2>
+            <p>Each parallax section uses a different background image</p>
+        </div>
+    </section>
+
+    <!-- Dark Section -->
+    <section class="section-dark">
+        <h2>Made with HTML &amp; CSS</h2>
+        <p>
+            This is a simple parallax scrolling demo created as a web development
+            project. You can use it as a template and add your own content, images,
+            and sections.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Parallax Demo | Created by Akshit Sharma</p>
+    </footer>
+
+</body>
+</html>
