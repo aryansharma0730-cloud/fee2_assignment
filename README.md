@@ -1,0 +1,1 @@
+FEE class assignments
